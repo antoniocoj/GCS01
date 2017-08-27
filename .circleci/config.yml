@@ -1,0 +1,24 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.1
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - run:
+          name: install dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install django flake8
+        
+      - run:
+          name: run tests
+          command: |
+            . venv/bin/activate
+            python manage.py test
+            flake8 --exclude polls/migrations/,manage.py  .
