@@ -1,0 +1,8 @@
+language: python
+python:
+  - "3.5"
+install:
+  - "sudo pip install django flake8"
+script:
+  - "python manage.py test"
+  - "flake8 --exclude polls/migrations/,manage.py  ."
