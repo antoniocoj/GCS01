@@ -1,8 +1,11 @@
 language: python
 python:
-  - "3.5"
+- '3.5'
 install:
-  - "pip install django flake8"
+- pip install django flake8
 script:
-  - "python manage.py test"
-  - "flake8 --exclude polls/migrations/,manage.py  ."
+- python manage.py test
+- flake8 --exclude polls/migrations/,manage.py  .
+deploy:
+  api_key:
+    secure: QcnyQPVQUkagX20xBPeQgDV4YXP67mDrgq5c8Ubb9qmNLoRIQQEvjPaMORf3FEN/tGKB5lwU2qT5NApwpokcx68BgdWjVhEs2SSXXw29uBN9U2vKp91aCVbPGOQkHdqNps4Vt0lBxeI8m1EiSpsaMpM/gAkFwVq+u/XZJfnvcQmD85W+y1yIBI6DLw4IVYhn8jcc923rcZn+eFOcZSaY2ROZPN9sol/VYZTuO9MicCU0k8HvkibxP4q8MrTACInseX81QecYTyzNeUe29qbqgbLqp7frJg9/zI7EF6cGuFCRy5WrzO+LPH1ORU+KT6Y1ZnLC+tXFUT/tIbcRqOoJ5J4crVImAIuuHGXYmDxtnW6Il+XQZX0i67hxfNUPpw0ia0GPakLVfCq9CMvPC32Dmi5ny80vodZjItgGVfk9zrbUVmIuWrW7TbkOGZjlAaxXtZeIrrElhbiE8B12h/ZqhR+9NQ+Ze3h8/D4FVRWFWol0GAvWOibcLM9IvXyEq+AvHoY5B8Vc/APvgpofCRxOj27fV8BwBTsoKgjV6uv1MSbQETLecvMMPZvsfLYk3RM1SuPJCdlQYD3Y+SpynfOXv4k86BmDN5zdgjTZp3yDJb3G8LLTBTdv54TW5k+Qi5JgZVH5ciXL3Zmzh4mfMuehWJP5L/GGIelPjU0wBicUTbs=
