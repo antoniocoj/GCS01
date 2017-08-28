@@ -12,13 +12,17 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install django flake8
-        
+            sudo apt-get install python-pip
+            sudo pip install django flake8
+      - run:
+          name: migrate
+          command: |
+            python manage.py migrate
       - run:
           name: run tests
           command: |
-            . venv/bin/activate
             python manage.py test
             flake8 --exclude polls/migrations/,manage.py  .
+      - store_artifacts:
+          path: test-reports
+          destination: test-reports
